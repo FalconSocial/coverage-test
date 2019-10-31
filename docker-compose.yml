@@ -1,0 +1,12 @@
+---
+version: '3.5'
+services:
+  api:
+    image: python:3.7.5-slim-buster
+    volumes:
+      - ./:/app
+    command: bash -c "
+      cd app
+      && ls -l
+      && pip install tox
+      && tox"
